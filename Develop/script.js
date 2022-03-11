@@ -34,8 +34,6 @@ function generatePassword() {;
   }
 // Password length
 
-/*
-// I will just say I found this on StackOverflow but it helped a lot and make a lot of sense 
 // essentially creating a random string of upper, lower, special char, and numbers
 function randomLowerCase() {
   var lowerCaseLength = lowerCase.length;
