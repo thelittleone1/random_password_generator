@@ -130,3 +130,4 @@ generateBtn.addEventListener("click", writePassword);
   // elements in password array
   // 9. joing characters in the password array into a string
   // 10. return password */
+
