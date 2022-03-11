@@ -9,6 +9,7 @@ let lowerCase = "abcdefghijklmnopqrstuvwxyz";
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let goodLength;
 let tempPassword= "";
+let intialPassword= "";
 // Variables
 
 // after generating the password this wipes it clean for it's next use
@@ -16,25 +17,11 @@ function rebuildPassword() {
   password = "";
   goodLength = 0;
   tempPassword = "";
+  intialPassword = "";
 }
 //reset password
 
-// intial prompt to enter in passsword length
-function generatePassword() {;
-  function firstPrompt() {
-    let user = prompt("How long ya want your password to be, enter a number?");
-      let inputNum = parseInt(user);
-      if (inputNum >= 8 && inputNum <= 128) {
-      goodLength = inputNum;
-    } else {
-       alert("Invalid Length, enter a number between 8-128");
-    }
-    }
-    return firstPrompt();
-  }
-// Password length
-
-// essentially creating a random string of upper, lower, special char, and numbers
+// essentially creating a randomizer function for the upper, lower, special char, and numbers
 function randomLowerCase() {
   var lowerCaseLength = lowerCase.length;
   for ( var i = 0; i < lowerCase.length; i++) {
@@ -68,39 +55,62 @@ function randomNumber() {
 }
 // Random generators 
 
+// intial prompt to enter in passsword length
+function generatePassword() {;
+  function firstPrompt() {
+    let user = prompt("How long ya want your password to be, enter a number?");
+      let inputNum = parseInt(user);
+      if (inputNum >= 8 && inputNum <= 128) {
+      goodLength = inputNum;
+    } else {
+       alert("Invalid Length, enter a number between 8-128");
+    }
+    }
+    return firstPrompt();
+  }
+// Password length
+
 // confirming the want for characters 
 var speicalCharCheck = confirm("Do ya want speical characters?");
 if (speicalCharCheck = true) {
+  intialPassword += specialChar;
   tempPassword += randomSpecial(specialChar);
 }
 
 var numbersCheck = confirm("Do ya want numbers?");
 if (numbersCheck = true) {
+  intialPassword += numbers;
   tempPassword += randomNumber(numbers);
 }
 
 var lowerCaseCheck = confirm("Do ya want lower case letters?");
 if (lowerCaseCheck = true) {
+  intialPassword += lowerCase;
   tempPassword += randomLowerCase(lowerCase);
 }
 
 var upperCaseCheck = confirm("Do ya want UPPER CASE LETTERS?");
 if (upperCaseCheck = true) {
+  intialPassword += upperCase;
   tempPassword += randomUpperCase(upperCase);
 }
 // Confirming what characters they wants
 
-// Displaying the generated password
 // storing new password
 for ( var i  = 0; i < goodLength; i++) {
   password += tempPassword.charAt(math.floor(math.random() * tempPassword.length));
 }
 // storing new password
-*/
+for( var i2 = 0; i2 < goodLength; i2++) {
+  password += tempPassword.charAt(Math.floor(Math.random() * tempPassword.length));
+}
+
+let passwordArray = password.split("");
+
+console.log(password);
+//  Displaying Password
 
 
-
-// Write password to the #password input
 function writePassword() { 
   var password = generatePassword(); 
   generatePassword();
