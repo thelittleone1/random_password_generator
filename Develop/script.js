@@ -24,7 +24,7 @@ function rebuildPassword() {
 */
 
 // essentially creating a randomizer function for the upper, lower, special char, and numbers
-function randomLowerCase(lowerCase) {
+function randomLowerCase() {
   var lowerCaseLength = lowerCase.length;
   for ( var i = 0; i < lowerCase.length; i++) {
     password += lowerCase.charAt(Math.floor(Math.random() * lowerCaseLength));
@@ -32,7 +32,7 @@ function randomLowerCase(lowerCase) {
   return password;
 }
 
-function randomUpperCase(upperCase) {
+function randomUpperCase() {
   var upperCaseLength = upperCase.length;
   for ( var i = 0; i < length; i++) {
     password += upperCase.charAt(Math.floor(Math.random() * upperCaseLength));
@@ -40,7 +40,7 @@ function randomUpperCase(upperCase) {
   return password;
 }
 
-function randomSpecial(specialChar) {
+function randomSpecial() {
   var specialCharLength = specialChar.length;
   for ( var i = 0; i < length; i++) {
    password += specialChar.charAt(Math.floor(Math.random() * specialCharLength));
@@ -48,7 +48,7 @@ function randomSpecial(specialChar) {
   return password;
 }
 
-function randomNumber(numbers) {
+function randomNumber() {
   var numbersLength = numbers.length;
   for ( var i = 0; i < length; i++) {
     password += numbers.charAt(Math.floor(Math.random() * numbersLength));
@@ -103,8 +103,6 @@ if (upperCaseCheck = true) {
 for ( var i  = 0; i < goodLength; i++) {
   password += tempPassword.charAt(math.floor(math.random() * tempPassword.length));
 }
-
-let passwordArray = password.split("");
 
 console.log(password);
 //  Displaying Password
