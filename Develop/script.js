@@ -12,6 +12,7 @@ let tempPassword= "";
 let intialPassword= "";
 // Variables
 
+/*
 // after generating the password this wipes it clean for it's next use
 function rebuildPassword() {
   password = "";
@@ -20,9 +21,10 @@ function rebuildPassword() {
   intialPassword = "";
 }
 //reset password
+*/
 
 // essentially creating a randomizer function for the upper, lower, special char, and numbers
-function randomLowerCase() {
+function randomLowerCase(lowerCase) {
   var lowerCaseLength = lowerCase.length;
   for ( var i = 0; i < lowerCase.length; i++) {
     password += lowerCase.charAt(Math.floor(Math.random() * lowerCaseLength));
@@ -30,7 +32,7 @@ function randomLowerCase() {
   return password;
 }
 
-function randomUpperCase() {
+function randomUpperCase(upperCase) {
   var upperCaseLength = upperCase.length;
   for ( var i = 0; i < length; i++) {
     password += upperCase.charAt(Math.floor(Math.random() * upperCaseLength));
@@ -38,7 +40,7 @@ function randomUpperCase() {
   return password;
 }
 
-function randomSpecial() {
+function randomSpecial(specialChar) {
   var specialCharLength = specialChar.length;
   for ( var i = 0; i < length; i++) {
    password += specialChar.charAt(Math.floor(Math.random() * specialCharLength));
@@ -46,17 +48,17 @@ function randomSpecial() {
   return password;
 }
 
-function randomNumber() {
+function randomNumber(numbers) {
   var numbersLength = numbers.length;
   for ( var i = 0; i < length; i++) {
     password += numbers.charAt(Math.floor(Math.random() * numbersLength));
   }
   return password;
 }
-// Random generators 
+// Random generators
 
 // intial prompt to enter in passsword length
-function generatePassword() {;
+function generatePassword() {
   function firstPrompt() {
     let user = prompt("How long ya want your password to be, enter a number?");
       let inputNum = parseInt(user);
@@ -96,13 +98,10 @@ if (upperCaseCheck = true) {
 }
 // Confirming what characters they wants
 
+
 // storing new password
 for ( var i  = 0; i < goodLength; i++) {
   password += tempPassword.charAt(math.floor(math.random() * tempPassword.length));
-}
-// storing new password
-for( var i2 = 0; i2 < goodLength; i2++) {
-  password += tempPassword.charAt(Math.floor(Math.random() * tempPassword.length));
 }
 
 let passwordArray = password.split("");
